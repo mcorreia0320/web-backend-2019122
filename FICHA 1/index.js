@@ -87,3 +87,35 @@ function somatorio_100() {
 
 somatorio_100()
 
+function fatorial(n) {
+    var result = 1;
+    for (let i = 1; i <= n; i++) {
+        result = result * i;
+    }
+    console.log(result);
+}
+
+fatorial(4)
+
+function calculos(array) {
+    var min = array[0];
+    var max = array[0];
+    var somatorio = 0;
+    for (let i = 0; i < array.length; i++) {
+        
+        somatorio += array[i];
+       
+        if (min > array[i]) {
+            min = array[i];
+        }
+        else if (max < array[i]) {
+            max = array[i];
+        }
+    }
+    console.log('Minimo:', min);
+    console.log('Maximo:', max);
+    console.log('Media:', somatorio / array.length);
+}
+
+calculos([45,12,23,73,10,56,4,97,34,51])
+

@@ -1,0 +1,255 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Ficha 9",
+        "description": "Ficha 9",
+        "contact": {
+            "name": "Miguel Peñaranda"
+        },
+        "servers": [
+            "http://localhost:3000"
+        ]
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "List all people",
+                "description": " List all people using sequilize",
+                "operationId": "listPeople",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "default": {
+                        "description": "Successful Operation"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "Create a new person using sequilize",
+                "description": " Creating person",
+                "operationId": "createPerson",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "default": {
+                        "description": "Successful Operation"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "Delete person by id using sequelize",
+                "description": "Deleting persons by id",
+                "operationId": "deletePersons",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "id",
+                        "description": "ID of the person to delete",
+                        "required": true,
+                        "type": "integer"
+                      }
+                ],             
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "404": {
+                        "description": "No persons found"
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "delete": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "Delete person by id using sequelize",
+                "description": "Delete person by ID.",
+                "operationId": "deletePersonById",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of the person to delete",
+                        "required": true,
+                        "type": "integer"
+                      }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid id supplied"
+                    },
+                    "404": {
+                        "description": "Id not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "Update person by id using sequelize",
+                "description": "Update person by ID.",
+                "operationId": "updatePersonById",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of the person to update",
+                        "required": true,
+                        "type": "integer"
+                      }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid id supplied"
+                    },
+                    "404": {
+                        "description": "Id not found"
+                    }
+                }
+            }         
+        },
+        "/person": {
+            "get": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "Get person by id using sequelize",
+                "description": "Get person by ID.",
+                "operationId": "getPersonById",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "description": "ID of the person to get",
+                        "required": true,
+                        "type": "integer"
+                      }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid id supplied"
+                    },
+                    "404": {
+                        "description": "Id not found"
+                    }
+                }
+            }       
+        },
+        "/{id}/{profession}": {
+            "get": {
+                "tags": [
+                    "people"
+                ],
+                "summary": "Get person by id and profession using sequelize",
+                "description": "Get person by ID and profession.",
+                "operationId": "getPersonByIdAndProfession",
+                "produces": [
+                    "application/xml",
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "ID of the person",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "in": "path",
+                        "name": "profession",
+                        "description": "Profession of the person",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Invalid id supplied"
+                    },
+                    "404": {
+                        "description": "Id not found"
+                    }
+                }
+            }       
+        }
+    },
+    "definitions": {
+        "people": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "x-primary-key": true
+                },
+                "firstName": {
+                    "type": "string"
+                },
+                "lastName": {
+                    "type": "string"
+                },
+                "profession": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            },
+            "xml": {
+                "name": "people"
+            }
+        }
+    }
+}
+

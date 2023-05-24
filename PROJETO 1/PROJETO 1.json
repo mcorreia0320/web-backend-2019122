@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "aba06faf-596e-43f7-b57c-b97ab83451a5",
+		"name": "PROJETO 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PARTE A - EXERCICIO A",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE A - EXERCICIO B",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"customer\": \"Saul Pinto\",\n        \"car_brand\": \"Toyota\",\n        \"car_model\": \"Supra\",\n        \"license_plate\": \"30-DC-48\",\n        \"pickup_location\": \"Airport Lisbon\",\n        \"return_location\": \"Avenida da Liberdade\",\n        \"price\": 400,\n        \"pickup_date\": \"2023-09-20\",\n        \"return_date\": \"2023-09-27\",\n        \"comments\": \"The Best Car Ever!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rentals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE A - EXERCICIO C",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals/user/?name=John Smith",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"user",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "John Smith"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE A - EXERCICIO D",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals/5/discount/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"5",
+						"discount",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE A - EXERCICIO E",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"date\": \"2023-09-15T23:00:00.000Z\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rentals/beforeSomeDate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"beforeSomeDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE B - EXERCICIO A",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE B - EXERCICIO B",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals/aluguer/delete?id=15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"aluguer",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE B - EXERCICIO C",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals/location/place?name=Avenida do Mar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"location",
+						"place"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Avenida do Mar"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE B - EXERCICIO D",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"comments\": \"Excelente servicio\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rentals/comment/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"comment",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PARTE B - EXERCICIO E",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/rentals/order/price",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"order",
+						"price"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EXERCICIO EXTRA",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"customer\": \"Miguel Correia\",\n        \"car_model\": \"206 GT\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/rentals/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"rentals",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
