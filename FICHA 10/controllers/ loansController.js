@@ -1,7 +1,7 @@
-const Loan = require('../sequelize').Loan;
+const {Loan, User, Book } = require('../sequelize');
 
 exports.getAllLoans = (req,res,next) =>{
-    Loan.findAll().then(result =>{
+    Loan.findAll({include: [User, Book]}).then(result =>{
         res.send(result);
     })
 }

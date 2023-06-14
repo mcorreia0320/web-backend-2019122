@@ -32,6 +32,7 @@ sequelize.sync({ force: false })
          console.log('Database & tables created!');
      });
 
+
 module.exports ={
     User, Book, Loan
 }
